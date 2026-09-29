@@ -32,7 +32,7 @@ const int ANGLE_COCKED = 60;   // 尻尾(短い方)を持ち上げた状態=「�
 const int ANGLE_STRIKE = 110;  // 尻尾が石(受け台)を打つ状態=「コン」
 
 // --- テンポ(1ユニットの長さ ms。小さいほど速い) ---
-int unitMs = 200;
+int unitMs = 400;
 
 // 「コンコンコンコン ココ ココーコン コンコンコンコン コーコンコーコン」
 // を、1音ごとの長さ(ユニット数)の配列にしたもの。
@@ -71,6 +71,6 @@ void playSequence() {
 // 「コン」を1回鳴らす(振り下ろし→打った姿勢を保持→ゆっくり持ち上げ)
 void knock() {
   shishiServo.write(ANGLE_STRIKE);      // すばやく振り下ろす(ここで石に当たる)
-  delay(120);                           // 打った姿勢を少し保持
+  delay(240);                           // 打った姿勢を少し保持
   shishiServo.write(ANGLE_COCKED);      // ゆっくり持ち上げ直す(「ぎー」)
 }
